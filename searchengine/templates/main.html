@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+ <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{% block title %}Novel Search{% endblock %}</title>
+  <meta name="description" content="Novel Search 是一款小说章节搜索引擎。" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Dragon Prince Yuan" />
+  <meta name="founder" content="Dragon Prince Yuan" />
+  <link href="https://cdn.bootcss.com" rel="dns-prefetch" />
+  <link href="https://api.bootcdn.cn" rel="dns-prefetch" />
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <!--[if IE 9]>
+    <script src="https://cdn.bootcss.com/geopattern/1.2.3/js/base64.min.js"></script>
+    <script src="https://cdn.bootcss.com/geopattern/1.2.3/js/typedarray.min.js"></script>
+  <![endif]-->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png?1526622111831" />
+  <link rel="shortcut icon" href="/assets/ico/favicon.ico?1526622111831" />
+
+
+ </head>
+ <body class="home-template" >
+  <header class="site-header" style="background: #795548">
+   <nav class="navbar navbar-static-top main-navbar" id="top">
+    <div class="container">
+     <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+      <a href="/" class="navbar-brand brand-bootcdn text-hide" onclick="_hmt.push(['_trackEvent', 'main-navbar', 'click', 'main-navbar-bootcdn'])">BootCDN</a>
+     </div>
+     <nav id="bs-navbar" class="collapse navbar-collapse">
+     </nav>
+    </div>
+   </nav>
+   <div class="container jumbotron" style="background-color:transparent;">
+    <div class="row">
+     <div class="col-xs-12">
+      <h1 style="color: #FFFFFF; text-align: center; text-shadow: black 0.1em 0.1em 0.2em;">Novel Dragon Prince Yuan Searcher</h1>
+      <p style="text-align: center; color: #FFFFFF; text-shadow: black 0.1em 0.1em 0.2em;">小说《元尊》章节搜索服务<br />
+        <span class="package-amount" style="text-align: center; color: #FFFFFF; text-shadow: black 0.1em 0.1em 0.2em;">共收录了 <strong>1264</strong> 章的内容</span>
+      </p>
+      <div class="search-wraper" role="search">
+        <form action="search" method="GET">
+          <input class="form-control search clearable" placeholder="搜索章节：" autocomplete="off" autofocus="" tabindex="0" autocorrect="off" autocapitalize="off" spellcheck="false" style="width: 100%;" name="q" value="{% block search %}{% endblock %}"/>
+        </form>
+      </div>
+     </div>
+    </div>
+   </div>
+  </header>
+
+  <div class="container protocal-notice hidden-xs">
+   <div class="row">
+    <div class="col-xs-12">
+     <div class="pull-right">
+      {% block resultAmount %}
+      {% endblock %}
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <main class="packages-list-container" id="all-packages" style="font-family: 'Microsoft JhengHei'">
+   <div class="container">
+    <div class="list-group packages" id="common-packages">
+     {% block content %}
+
+     {% endblock %}
+     <a href="http://www.shuquge.com/txt/5809/index.html" class="package list-group-item all-packages" target="_blank">查看所有章节</a>
+    </div>
+    <div class="list-group packages" id="search-results" style="display: none"></div>
+   </div>
+  </main>
+
+  <footer id="footer" class="footer hidden-print" style="background-image: linear-gradient(#EBECEC, #CACBCB);">
+   <div class="container">
+    <div class="row">
+     <div class="footer-techs col-md-2 col-sm-12">
+      <h4>我们用到的技术</h4>
+      <ul class="list-inline">
+       <li><a href="https://www.python.org/">python</a></li>
+       <li><a href="https://scrapy.org/">scrapy</a></li>
+       <li><a href="https://pypi.org/project/Whoosh/">whoosh</a></li>
+       <li><a href="https://pypi.org/project/jieba/">jieba</a></li>
+       <li><a href="https://www.djangoproject.com/">django</a></li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </footer>
+ </body>
+</html>

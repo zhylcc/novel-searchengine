@@ -1,0 +1,68 @@
+{% extends "main.html" %}
+
+{% block title %}{{query}} - Extract Page{% endblock %}
+
+{% block resultAmount %} {% endblock %}
+
+{% block search %}{{query}}{% endblock %}
+
+{% block content %}
+    <div  class="package list-group-item">
+        <div class="row">
+            <div class="col-md-3">
+                <h4 class="package-name">关键词</h4>
+            </div>
+            <div class="col-md-9 hidden-xs">
+                <h4 class="package-name">{{query}}</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <h4 class="package-name">形容词</h4>
+            </div>
+            <div class="col-md-9 hidden-xs">
+                {% for adj in adjs %}
+                    <span class="package-name">{{adj}}</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <h4 class="package-name">地名</h4>
+            </div>
+            <div class="col-md-9 hidden-xs">
+                {% for pos in poss %}
+                    <span class="package-name">{{pos}}</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <h4 class="package-name">年龄</h4>
+            </div>
+            <div class="col-md-9 hidden-xs">
+                {% for age in ages %}
+                    <span class="package-name">{{age}}</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <h4 class="package-name">时期</h4>
+            </div>
+            <div class="col-md-9 hidden-xs">
+                {% for time in times %}
+                    <span class="package-name">{{time}}</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <h4 class="package-name">出现总次数</h4>
+            </div>
+            <div class="col-md-9 hidden-xs">
+                <h4 class="package-name">{{wdN}}</h4>
+            </div>
+        </div>
+    </div>
+{% endblock %}
