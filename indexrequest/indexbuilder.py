@@ -28,7 +28,7 @@ class IndexBuilder:
             content = TEXT(stored=True, analyzer=analyzer)
         )
         # 创建索引文件，在[index/]下
-        path = os.path.dirname(__file__) + "/index"
+        path = os.path.dirname(os.path.abspath(__file__)) + "/index"
         if not os.path.exists(path):
             os.mkdir(path)
             index = create_in(path, schema)

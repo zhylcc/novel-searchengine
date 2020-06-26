@@ -57,7 +57,7 @@ class NovelspiderPipeline:
         self.post.insert(db_item)
         # 写入文件内容
         content = item['chapterContent']
-        path = './novelspiderout'
+        path = os.path.dirname(os.path.abspath(__file__)) + '/novelspiderout'
         if not os.path.exists(path):
             os.mkdir(path)
         with open(path + "/" + db_item['title'] +".txt", 'w+') as f:
